@@ -1,0 +1,5 @@
+<%= form_with scope: :tweets, url: '/tweets/add' ,local: true do |form| %>
+  タイトル：<%= form.text_field :title %>
+  本文：<%= form.text_area :text %>
+  <%= form.submit %>
+<% end %>

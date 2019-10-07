@@ -1,0 +1,7 @@
+<h3>ログイン</h3>
+
+<%= form_with scope: :users, url: '/users/login2' ,local: true do |form| %>
+  ユーザ名：<%= form.text_field :name %>
+  パスワード：<%= form.text_field :password %>
+  <%= form.submit %>
+<% end %>
