@@ -1,9 +1,18 @@
 class TweetsController < ApplicationController
   def show
+    @tweets = Tweet.all
+    @user_name= {}
+    @tweets.each do |tweet|
+      user = User.find(tweet.user_id)
+      @user_name[tweet.user_id] = user.name
+    end
     render template: 'tweets/show'
   end
 
   def detail
+    tweet_id = params[:id]
+    tweet = Tweet.find(tweet_id)
+    @username = User.find(@tweet.user_id).user_name
     render template: 'tweets/detail'
   end
 
